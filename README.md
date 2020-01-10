@@ -19,3 +19,36 @@ In this activity you will be writing code to render an array of todo items to th
   * It should set the content of the created `li` element to the value of the current array index.
   
   * Finally the new `li` should be appended to the `ul` provided.
+
+
+
+# Add ToDo's
+
+In this activity, we will be continuing to build on our Todo activity. This time, we'll be adding the `add` functionality.
+
+## Instructions
+
+* Add an event listener so that when a user hits enter, the value from the todo input field is pushed to our todo array.
+
+* Make sure that empty values are not pushed to the array.
+
+* Once the value has been added to the array, clear the input field and re-render the todo list.
+
+# Complete Todos
+
+In this activity, we will create a "complete" button that successfully removes a todo item from the list when clicked.
+
+## Instructions
+
+* Modify your `renderTodos()` function:
+
+  * When a new todo is created, add a `data-index` for each `li`.
+
+  * Generate a button that says "Complete" and append it to your `li`.
+
+* Add an event listener so that when a user clicks the Complete button, it accesses the `data-index` value and removes that todo element from the list.
+
+## Hint
+
+* You can use `setAttribute` for `data-index` and `splice` to remove your todo from the list.
+
