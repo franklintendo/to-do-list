@@ -5,13 +5,20 @@ var todoCountSpan = document.querySelector("#todo-count");
 var todoItem = '';
 // create string
 var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
+// load existing todo items.
+printTodo();
 
-// loop to pull items from array and display on page
+function printTodo() {
+    todoList.innerHTML="";
+   // loop to pull items from array and display on page
 for (let i = 0; i < todos.length; i++) {
     var listItem = document.createElement('li');
     listItem.textContent = todos[i];
     todoList.appendChild(listItem);  
 };
+}
+
+
 
 // pull value from user input 
 todoInput.addEventListener('input', function(event){
@@ -27,6 +34,8 @@ todoInput.addEventListener('keydown', function(event){
     if (event.keyCode === 13) {
         todos.push(todoItem);
         todoInput.value="";
+
+        printTodo();
           // prevents from page reloading.
         event.preventDefault();
         console.log(todos);
@@ -34,11 +43,4 @@ todoInput.addEventListener('keydown', function(event){
     
 })
 
-// add to todo array
 
-
-// user types new todo and is captured
-// todoInput.addEventListener('', function(event) {
-//     event.preventDefault();
-//     console.log(todoInput.value);
-// });
