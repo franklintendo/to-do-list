@@ -16,15 +16,20 @@ for (let i = 0; i < todos.length; i++) {
 // pull value from user input 
 todoInput.addEventListener('input', function(event){
     event.preventDefault();
-    todoItem += todoInput.value;
+    todoItem = todoInput.value;
     // todos.push(todoInput.value);
     console.log(todoItem);
 }) 
 todoInput.addEventListener('keydown', function(event){
-    
-    if (event.keyCode == 13) {
+  
+
+    // if enter key is pressed then new todo item is push to the array.
+    if (event.keyCode === 13) {
         todos.push(todoItem);
-        console.log(todoItem);
+        todoInput.value="";
+          // prevents from page reloading.
+        event.preventDefault();
+        console.log(todos);
     }
     
 })
